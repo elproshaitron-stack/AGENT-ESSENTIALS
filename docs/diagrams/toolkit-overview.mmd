@@ -1,0 +1,26 @@
+%% Agent Essentials: layered overview
+flowchart TB
+    subgraph Interfaces
+      CLI["CLI (agent-essentials / ae)"]
+      PY["Python API"]
+      PLG["Third-party plugins"]
+    end
+    subgraph Core["core/"]
+      MOD["Module ABC: run(dict)->dict"]
+      REG["PluginRegistry"]
+      DI["Container (DI)"]
+      RES["Result types"]
+    end
+    subgraph Modules
+      ARCH["ArchitectureGenerator"]
+      MEM["MemoryEngine"]
+      PLAN["TaskPlanner"]
+      VAL["HallucinationDetector"]
+      OPT["TokenCounter"]
+    end
+    CLI --> REG
+    PLG --> REG
+    PY --> ARCH & MEM & PLAN & VAL & OPT
+    REG --> MOD
+    ARCH & MEM & PLAN & VAL & OPT --> MOD
+    ARCH & MEM & PLAN & VAL & OPT --> RES

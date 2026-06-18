@@ -1,0 +1,43 @@
+site_name: Agent Essentials
+site_description: The missing toolkit for AI agents — design, validate, optimize and scale before production.
+repo_url: https://github.com/elproshaitron-stack/AGENT-ESSENTIALS
+repo_name: AGENT-ESSENTIALS
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Architecture overview: architecture.md
+  - Public API: api.md
+  - Guides:
+      - Plugins: guides/plugins.md
+  - Modules:
+      - Architecture Generator: modules/architecture.md
+      - Memory Engine: modules/memory.md
+      - Task Planner: modules/planning.md
+      - Hallucination Detector: modules/validation.md
+      - Entailment Validator: modules/entailment.md
+      - Token Counter: modules/optimization.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - tables
+  - toc:
+      permalink: true
